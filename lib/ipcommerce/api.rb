@@ -1,3 +1,7 @@
+require_relative 'configuration'
+require_relative 'authentication'
+require_relative 'connection'
+
 module Ipcommerce
 	# @private
 	class API

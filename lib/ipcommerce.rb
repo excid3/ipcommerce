@@ -1,18 +1,12 @@
-require "ipcommerce/version"
-require "ipcommerce/api"
-require "ipcommerce/web_service"
-require "ipcommerce/authentication"
-require "ipcommerce/configuration"
-require "ipcommerce/connection"
-require "ipcommerce/web_service/service_information"
-require "ipcommerce/web_service/transaction_processing"
-require "ipcommerce/web_service/transaction_management"
-
 require "net/http"
 require "net/https"
 require "base64"
 require "date"
 require "cgi"
+
+require_relative 'ipcommerce/api'
+require_relative 'ipcommerce/web_service'
+require_relative 'ipcommerce/authentication'
 
 module Ipcommerce
   
