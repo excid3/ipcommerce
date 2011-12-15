@@ -1,5 +1,9 @@
 module Ipcommerce
 	class Web_service < API
+	
+	  require_relative 'web_service/service_information'
+		require_relative 'web_service/transaction_processing'
+		require_relative 'web_service/transaction_management'
 
 		def json_time(time)
 			if (time.is_a? Time) then
