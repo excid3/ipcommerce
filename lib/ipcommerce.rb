@@ -1,8 +1,15 @@
-require "net/http"
-require "net/https"
-require "base64"
-require "date"
-require "cgi"
+require 'net/http'
+require 'net/https'
+
+require 'rubygems'   
+require 'active_support/core_ext'
+
+require 'json'
+
+require 'nokogiri'
+require 'base64'
+require 'date'
+require 'cgi'
 
 require_relative 'ipcommerce/api'
 require_relative 'ipcommerce/web_service'
