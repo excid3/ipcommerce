@@ -228,6 +228,31 @@ module Ipcommerce
 				#puts response
 				response
 			end
-		end 
+			
+			def verify(transaction, merchant_profile_id=nil, workflow_id=nil)
+				merchant_profile_id||=@merchant_profile_id;
+				workflow_id||=@workflow_id;
+				
+				request={
+					__type: "VerifyTransaction"+REST_SCHEMA,
+				    ApplicationProfileId: @application_id,
+				    MerchantProfileId: merchant_profile_id,
+				    Transaction: {__type: "BankcardTransaction:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard"}
+    			}
+        transaction[:TransactionData][:TransactionDateTime]=iso_time(transaction[:TransactionData][:TransactionDateTime])
+				request[:Transaction].update(transaction)
+				puts request
+				request=JSON.generate(request)
+				#puts request
+				if (!self.validate_session())
+					return false; end
+				
+				#puts "Submitting verify..."
+				response=action_with_token(:post,:Txn,{body:request, target:workflow_id.to_s})
+				#puts "Done"
+				#puts response
+				response
+			end
+		end
 	end
 end
