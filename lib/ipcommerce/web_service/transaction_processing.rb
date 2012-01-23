@@ -234,7 +234,7 @@ module Ipcommerce
 				workflow_id||=@workflow_id;
 				
 				request={
-					__type: "VerifyTransaction"+REST_SCHEMA,
+					__type: "Verify"+REST_SCHEMA,
 				    ApplicationProfileId: @application_id,
 				    MerchantProfileId: merchant_profile_id,
 				    Transaction: {__type: "BankcardTransaction:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard"}
