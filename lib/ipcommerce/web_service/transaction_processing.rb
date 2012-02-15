@@ -12,7 +12,11 @@ module Ipcommerce
 					__type:"AuthorizeAndCaptureTransaction"+REST_SCHEMA,
 					ApplicationProfileId: @application_id,
 				    MerchantProfileId: merchant_profile_id,
-				    Transaction: {__type: "BankcardTransaction:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard"}
+				    Transaction: {
+				      __type: "BankcardTransactionPro:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard\/Pro",
+				      TransactionData: {
+				        __type: "BankcardTransactionDataPro:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard\/Pro"}
+				    }
     			}
     			transaction[:TransactionData][:TransactionDateTime]=iso_time(transaction[:TransactionData][:TransactionDateTime])
 				request[:Transaction].update(transaction)
@@ -37,7 +41,11 @@ module Ipcommerce
 					__type: "AuthorizeTransaction"+REST_SCHEMA,
 				    ApplicationProfileId: @application_id,
 				    MerchantProfileId: merchant_profile_id,
-				    Transaction: {__type: "BankcardTransaction:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard"}
+				    Transaction: {
+				      __type: "BankcardTransactionPro:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard\/Pro",
+				      TransactionData: {
+				        __type: "BankcardTransactionDataPro:http:\/\/schemas.ipcommerce.com\/CWS\/v2.0\/Transactions\/Bankcard\/Pro"}
+				    }
     			}
         transaction[:TransactionData][:TransactionDateTime]=iso_time(transaction[:TransactionData][:TransactionDateTime])
 				request[:Transaction].update(transaction)
