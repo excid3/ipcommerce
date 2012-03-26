@@ -22,7 +22,7 @@ module Ipcommerce
 				request[:Transaction].update(transaction)
 
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -51,7 +51,7 @@ module Ipcommerce
 				request[:Transaction].update(transaction)
 				puts request
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -78,7 +78,7 @@ module Ipcommerce
 					}
 				}
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -132,9 +132,9 @@ module Ipcommerce
 						Addendum: nil
 					}
 				}
-				request[:DifferenceData].merge(diff_data)
+				request[:DifferenceData].update(diff_data) #changed from merge to update bm
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -153,7 +153,7 @@ module Ipcommerce
 					DifferenceData:difference_data
 				}
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -174,7 +174,7 @@ module Ipcommerce
 					MerchantProfileId:merchant_profile_id
 				}
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -202,9 +202,9 @@ module Ipcommerce
 						Addendum: nil
 					}
 				}
-				request[:DifferenceData].merge(diff_data)
+				request[:DifferenceData].update(diff_data) #changed from merge to update bm
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -226,7 +226,7 @@ module Ipcommerce
 				request[:Transaction].update(transaction)
 
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
@@ -255,7 +255,7 @@ module Ipcommerce
 				request[:Transaction].update(transaction)
 				puts request
 				request=JSON.generate(request)
-				#puts request
+				puts request
 				if (!self.validate_session())
 					return false; end
 				
